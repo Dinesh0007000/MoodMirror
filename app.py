@@ -130,7 +130,7 @@ def chat():
 def talk():
     data = request.get_json()
     user_input = data.get("message", "")
-    user_gender = data.get("gender", "male")
+    user_gender = data.get("gender", "male").lower().strip()
     user_lang = detect_language(user_input)
 
     print("User input:", user_input)
@@ -156,13 +156,13 @@ def talk():
 
     voice_id = VOICE_MAP.get(user_lang, "en-US-cooper")
     if user_lang == "en":
-        voice_id = "en-US-cooper" if user_gender == "male" else "en-US-natalie"
+        voice_id = "en-US-cooper" if user_gender in ["male","boyfriend"]   else "en-US-natalie"
     if user_lang == "hi":
-        voice_id = "hi-IN-amit" if user_gender == "male" else "hi-IN-shweta"
+        voice_id = "hi-IN-amit" if user_gender in ["male","boyfriend"] else "hi-IN-shweta"
     if user_lang == "ta":
-        voice_id = "ta-IN-mani" if user_gender == "male" else "ta-IN-iniya" 
+        voice_id = "ta-IN-mani" if user_gender in ["male","boyfriend"] else "ta-IN-iniya" 
     if user_lang == "bn":
-        voice_id = "bn-IN-arnab" if user_gender == "male" else "bn-IN-anwesha"
+        voice_id = "bn-IN-arnab" if user_gender in ["male","boyfriend"] else "bn-IN-anwesha"
 
     audio_url = text_to_speech(reply_user_lang, voice_id)
 
