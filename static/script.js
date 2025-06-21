@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const gender = localStorage.getItem("friendGender");
+  const gender = localStorage.getItem("friendGender", "boyfriend");
   const friendTitle = document.getElementById("friend-title");
   const avatarImg = document.getElementById("avatarImg");
   const speakingGif = document.getElementById("speakingGif");
