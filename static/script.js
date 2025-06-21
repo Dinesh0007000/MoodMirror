@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const audioElem = document.getElementById("audio");
   const replyText = document.getElementById("replyText");
 
-  // Set avatar and title
   if (gender && friendTitle && avatarImg) {
     friendTitle.innerText =
       gender === "male"
@@ -20,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
         : "/static/avatars/girl.png";
   }
 
-  // Audio play & end handlers for showing/hiding GIF
   audioElem.onplay = () => {
     speakingGif.style.display = "block";
   };
@@ -32,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
   btn.addEventListener("click", async () => {
     const message = document.getElementById("inputText").value.trim();
 
-    // Reset response
     replyText.innerText = "Thinking... 🧠";
     speakingGif.style.display = "none";
     audioElem.style.display = "none";
