@@ -1,6 +1,6 @@
-# 🎙️ VoiceFriend – Talk to Your AI Friend in Any Mood & Language
+# 🎙️ MoodMirror – Talk to Your AI Friend in Any Mood & Language
 
-VoiceFriend is a multilingual, emotionally intelligent AI chatbot built using **Murf's Text-to-Speech API** and **OpenRouter's LLM**. You can talk to it in your preferred language and choose the personality of your virtual companion — from a supportive sister to a flirty boyfriend. It listens, responds emotionally, and speaks back to you in a realistic voice!
+MoodMirror is a multilingual, emotionally intelligent AI chatbot built using **Murf's Text-to-Speech API** and **OpenRouter's LLM**. You can talk to it in your preferred language and choose the personality of your virtual companion — from a supportive sister to a flirty boyfriend. It listens, responds emotionally, and speaks back to you in a realistic voice!
 
 ---
 
@@ -42,8 +42,8 @@ VoiceFriend is a multilingual, emotionally intelligent AI chatbot built using **
 ## 🚀 How to Run Locally
 ```plaintext
 1. **Clone the repo**
-   git clone https://github.com/yourusername/voicefriend.git
-   cd voicefriend
+   git clone https://github.com/yourusername/MoodMirror.git
+   cd MoodMirror
 Create a .env file
 MURF_API_KEY=your_murf_api_key
 OPENROUTER_API_KEY=your_openrouter_api_key
@@ -61,7 +61,7 @@ OpenRouter AI – used to create emotional replies based on user input and selec
 
 📂 Project Structure
 ```plaintext
-voicefriend/
+MoodMirror/
 │
 ├── static/
 │   ├── avatars/
@@ -81,3 +81,13 @@ MIT License. Feel free to fork, remix, and improve.
 Built by Gavireddy Dinesh Karthik
 
 Special thanks to Murf AI for the amazing APIs and opportunity 💙
+ 
+## Tech Stack Badges
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Murf AI](https://img.shields.io/badge/Murf%20AI-TTS-blueviolet)
+![OpenRouter](https://img.shields.io/badge/OpenRouter-LLM-informational)
+
