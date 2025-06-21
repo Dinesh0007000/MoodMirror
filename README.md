@@ -33,7 +33,9 @@ VoiceFriend is a multilingual, emotionally intelligent AI chatbot built using **
 ---
 
 ## 📸 Screenshots
-
+![main_page_ui](main_page.png)
+![user_request_page_ui](user_request_page.png)
+![chatbot_response_page_ui](ui_response_page.png)
 
 ---
 
