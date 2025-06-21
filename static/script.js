@@ -8,15 +8,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const replyText = document.getElementById("replyText");
 
   if (gender && friendTitle && avatarImg) {
-    friendTitle.innerText =
-      gender === "male"
-        ? "🧑 Talking to Your Brotherly Friend"
-        : "👩 Talking to Your Sisterly Friend";
+    const titles = {
+      male: "🧑 Talking to Your Brotherly Friend",
+      female: "👩 Talking to Your Sisterly Friend",
+      boyfriend: "💘 Talking to Your Boyfriend",
+      girlfriend: "💖 Talking to Your Girlfriend"
+    };
+    friendTitle.innerText = titles[gender] || titles.male;
 
-    avatarImg.src =
-      gender === "male"
-        ? "/static/avatars/boy.png"
-        : "/static/avatars/girl.png";
+    const avatars = {
+      male: "/static/avatars/boy.png",
+      female: "/static/avatars/girl.png",
+      boyfriend: "/static/avatars/boy.png",
+      girlfriend: "/static/avatars/girl.png"
+    };
+    avatarImg.src = avatars[gender] || avatars.male;
   }
 
   audioElem.onplay = () => {
