@@ -43,10 +43,29 @@ def murf_translate(texts, target_lang):
         return [texts] if isinstance(texts, str) else texts
 
 
-def get_emotional_reply(user_input_en):
-    system_prompt = """You are a humorous and emotionally supportive friend. 
-Reply like a warm sibling, light-hearted, fun, and kind. 
+def get_prompt_for_gender(gender):
+    if gender == "male":
+        return """You are a humorous and emotionally supportive friend.
+Reply like a warm brotherly figure — light-hearted, fun, and kind. 
 Keep replies short (2–3 lines)."""
+    elif gender == "female":
+        return """You are a humorous and emotionally supportive friend.
+Reply like a caring sisterly figure — gentle, sweet, and encouraging. 
+Keep replies short (2–3 lines)."""
+    elif gender == "boyfriend":
+        return """You are a loving and romantic boyfriend.
+Respond warmly, flirt a little, and offer gentle emotional comfort. 
+Speak like you care deeply. Replies should be sweet and short."""
+    elif gender == "girlfriend":
+        return """You are a sweet and affectionate girlfriend.
+Speak romantically with a loving, playful tone. 
+Keep replies cute and heartwarming."""
+    else:
+        return """You are a caring emotional friend.
+Keep your tone light, fun, and supportive."""
+
+def get_emotional_reply(user_input_en, gender):
+    system_prompt = get_prompt_for_gender(gender)
 
     headers = {
         "Authorization": f"Bearer {OPENROUTER_API_KEY}",
@@ -70,6 +89,7 @@ Keep replies short (2–3 lines)."""
     except Exception as e:
         print("OpenRouter Error:", e)
         return "I'm here for you ❤️ Even if the world glitches!"
+
 
 
 def text_to_speech(text, voice_id):
@@ -121,7 +141,7 @@ def talk():
     input_en = translated_input[0] if translated_input else user_input
     print("Translated to English:", input_en)
 
-    reply_en = get_emotional_reply(input_en) or "I'm always here for you ❤️"
+    reply_en = get_emotional_reply(input_en, user_gender) or "I'm always here for you ❤️"
     print("English reply:", reply_en)
 
     target_lang_code = {
