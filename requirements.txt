@@ -3,3 +3,4 @@ python-dotenv
 murf
 langdetect
 requests
+gunicorn
